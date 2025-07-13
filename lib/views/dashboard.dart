@@ -3,6 +3,7 @@ import 'champions_page.dart';
 import 'years_page.dart';
 import 'best_players_page.dart';
 import 'settings_page.dart';
+import 'statistics_page.dart';
 import 'package:tp_flutter_cdm/views/champions_page.dart';
 import 'package:tp_flutter_cdm/views/years_page.dart';
 import 'package:tp_flutter_cdm/views/best_players_page.dart';
@@ -14,6 +15,7 @@ class Dashboard extends StatelessWidget {
     _DashboardItem(title: "Champions", widget: ChampionsPage()),
     _DashboardItem(title: "Années", widget: YearsPage()),
     _DashboardItem(title: "Meilleurs joueurs", widget: BestPlayersPage()),
+    _DashboardItem(title: "Statistiques globales", widget: StatisticsPage()),
     _DashboardItem(title: "Paramètres", widget: SettingsPage()),
   ];
 
