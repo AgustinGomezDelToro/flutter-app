@@ -15,3 +15,13 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 # flutter-app
+
+
+- Mettre une variable d'environnement pour l'emulateur et pour le local
+- Faire 2 view 
+
+
+
+
+
+
