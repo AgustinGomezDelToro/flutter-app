@@ -36,7 +36,64 @@ class MyWorldCupApp extends StatelessWidget {
     return MaterialApp(
       title: 'Coupe du Monde App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.indigo),
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.indigo,
+          brightness: Brightness.light,
+        ),
+        scaffoldBackgroundColor: Colors.blue.shade50,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.indigo.shade400,
+          foregroundColor: Colors.white,
+          elevation: 4,
+          titleTextStyle: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            letterSpacing: 1.2,
+          ),
+        ),
+        textTheme: Theme.of(context).textTheme.copyWith(
+          titleLarge: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.indigo.shade900,
+          ),
+          bodyLarge: TextStyle(
+            fontSize: 16,
+            color: Colors.indigo.shade900,
+          ),
+          bodyMedium: TextStyle(
+            fontSize: 15,
+            color: Colors.indigo.shade800,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.indigo.shade400,
+            foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            textStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+            elevation: 3,
+          ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+          filled: true,
+          fillColor: Colors.white,
+          labelStyle: TextStyle(color: Colors.indigo.shade700),
+          prefixIconColor: Colors.indigo.shade400,
+        ),
+        cardTheme: CardThemeData(
+          color: Colors.white,
+          elevation: 6,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+        ),
+        dividerColor: Colors.indigo.shade100,
+      ),
       home: FutureBuilder<bool>(
         future: _isLoggedIn(),
         builder: (context, snapshot) {

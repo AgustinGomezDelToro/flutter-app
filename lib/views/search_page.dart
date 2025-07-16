@@ -3,12 +3,12 @@ import 'package:tp_flutter_cdm/services/api_service.dart';
 import '../models/champion.dart';
 import 'champion_detail_page.dart';
 
-class SettingsPage extends StatefulWidget {
+class SearchPage extends StatefulWidget {
   @override
-  _SettingsPageState createState() => _SettingsPageState();
+  _SearchPageState createState() => _SearchPageState();
 }
 
-class _SettingsPageState extends State<SettingsPage> {
+class _SearchPageState extends State<SearchPage> {
   List<Champion> _champions = [];
   List<Champion> _filtered = [];
   bool _loading = true;
@@ -60,7 +60,15 @@ class _SettingsPageState extends State<SettingsPage> {
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text("Paramètres")),
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Icon(Icons.search),
+            SizedBox(width: 8),
+            Text("Recherche avancée"),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           Padding(
@@ -69,6 +77,7 @@ class _SettingsPageState extends State<SettingsPage> {
               decoration: InputDecoration(
                 labelText: 'Rechercher un champion (pays ou année)',
                 border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.search),
               ),
               onChanged: _onSearch,
             ),
@@ -98,4 +107,4 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
     );
   }
-}
+} 

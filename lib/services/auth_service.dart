@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:tp_flutter_cdm/services/storage_service.dart';
+import '../constants/api_constants.dart';
 
 class AuthService {
-  final String baseUrl = dotenv.env['API_BASE_URL']!;
+  final String baseUrl = baseUri.toString();
   final StorageService _storage = StorageService();
 
   // Login → devuelve el token si fue exitoso, null si no
@@ -22,7 +22,7 @@ class AuthService {
       return token;
     }
 
-    print("❌ LOGIN FAILED: ${response.statusCode}");
+    print("❌ LOGIN FAILED:  {response.statusCode}");
     return null;
   }
 
